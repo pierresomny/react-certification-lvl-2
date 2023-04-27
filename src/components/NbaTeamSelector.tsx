@@ -1,8 +1,8 @@
 import { ChangeEvent, ReactElement, useState } from 'react';
-import classes from 'src/components/NbaTeamSelector.module.scss';
-import { useTeams } from 'src/hooks/teams.ts';
-import { useTrackedTeams } from 'src/hooks/trackedTeams.ts';
-import { Team } from 'src/utils/types.ts';
+import { useTeams } from '../hooks/teams.ts';
+import { useTrackedTeams } from '../hooks/trackedTeams.ts';
+import { Team } from '../utils/types.ts';
+import classes from './NbaTeamSelector.module.scss';
 
 export function NbaTeamSelector(): ReactElement {
 	const teams: Team[] = useTeams();

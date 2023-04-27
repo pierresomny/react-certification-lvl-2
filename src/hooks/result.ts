@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { fetchAllPages } from 'src/utils/fetch.ts';
-import { Game, Team } from 'src/utils/types.ts';
+import { fetchAllPages } from '../utils/fetch.ts';
+import { Game, Team } from '../utils/types.ts';
 
 export const useResult = (team: Team) => {
 	const [ games, setGames ] = useState<Game[]>([]);

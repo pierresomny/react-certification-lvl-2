@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { TrackedTeamsContext, TrackedTeamsContextType } from 'src/components/TrackedTeamsProvider.tsx';
+import { TrackedTeamsContext, TrackedTeamsContextType } from '../TrackedTeamsProvider.tsx';
 
 export const useTrackedTeams = () => {
 	const context: TrackedTeamsContextType | null = useContext(TrackedTeamsContext);

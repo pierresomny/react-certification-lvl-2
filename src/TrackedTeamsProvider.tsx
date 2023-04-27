@@ -1,5 +1,5 @@
 import { createContext, ReactElement, ReactNode, useState } from 'react';
-import { Team } from 'src/utils/types.ts';
+import { Team } from './utils/types.ts';
 
 export interface TrackedTeamsContextType {
 	trackedTeams: Team[];

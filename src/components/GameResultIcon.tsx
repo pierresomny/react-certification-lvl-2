@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { Game, Team } from 'src/utils/types.ts';
+import { Game, Team } from '../utils/types.ts';
 import classes from './GameResultIcon.module.scss';
 
 interface GameResultIconProperties {

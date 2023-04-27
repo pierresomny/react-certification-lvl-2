@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { App } from 'src/App.tsx';
-import { TrackedTeamsProvider } from 'src/components/TrackedTeamsProvider.tsx';
+import { App } from './App.tsx';
 import './index.css';
+import { TrackedTeamsProvider } from './TrackedTeamsProvider.tsx';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 	<React.StrictMode>

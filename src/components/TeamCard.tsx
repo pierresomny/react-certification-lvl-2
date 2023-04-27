@@ -1,8 +1,9 @@
 import { ReactElement } from 'react';
-import { GameResultIcon } from 'src/components/GameResultIcon.tsx';
-import classes from 'src/components/TeamCard.module.scss';
-import { useResult } from 'src/hooks/result.ts';
-import { Game, Team } from 'src/utils/types.ts';
+import { GameResultIcon } from '../components/GameResultIcon.tsx';
+import { useResult } from '../hooks/result.ts';
+import { useTrackedTeams } from '../hooks/trackedTeams.ts';
+import { Game, Team } from '../utils/types.ts';
+import classes from './TeamCard.module.scss';
 
 interface TeamCardProperties {
 	team: Team;
@@ -10,7 +11,8 @@ interface TeamCardProperties {
 
 export const TeamCard = ({ team }: TeamCardProperties): ReactElement => {
 	const games: Game[] = useResult(team);
-
+	const { removeTeam } = useTrackedTeams();
+	// Calculate scores.
 	const avgPtsScored: number = games.reduce((average: number, game: Game) => average + (
 		game.home_team.id === team.id ? game.home_team_score : game.visitor_team_score
 	), 0) / games.length;
@@ -25,7 +27,7 @@ export const TeamCard = ({ team }: TeamCardProperties): ReactElement => {
 				<p>{ team.full_name } [{ team.abbreviation }]</p>
 				<span>{ team.conference }</span>
 			</div>
-			<button>x</button>
+			<button onClick={ () => removeTeam(team) }>x</button>
 		</div>
 		<hr/>
 		<div className={ classes.content }>

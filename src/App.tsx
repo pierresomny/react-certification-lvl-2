@@ -1,9 +1,9 @@
 import { ReactElement } from 'react';
-import classes from 'src/App.module.scss';
-import { NbaTeamSelector } from 'src/components/NbaTeamSelector.tsx';
-import { TeamCard } from 'src/components/TeamCard.tsx';
-import { useTrackedTeams } from 'src/hooks/trackedTeams.ts';
-import { Team } from 'src/utils/types.ts';
+import classes from './App.module.scss';
+import { NbaTeamSelector } from './components/NbaTeamSelector.tsx';
+import { TeamCard } from './components/TeamCard.tsx';
+import { useTrackedTeams } from './hooks/trackedTeams.ts';
+import { Team } from './utils/types.ts';
 
 export function App(): ReactElement {
 

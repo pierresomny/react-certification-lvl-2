@@ -1,4 +1,4 @@
-import { ApiResponse } from 'src/utils/types.ts';
+import { ApiResponse } from '../utils/types.ts';
 
 /**
  * Make an Api call on a specific path
