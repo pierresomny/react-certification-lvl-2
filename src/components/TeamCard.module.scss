@@ -4,6 +4,7 @@ div.teamCard {
 	flex-direction : column;
 	margin         : 2em;
 	padding        : 1em;
+	width          : 25vw;
 
 	div.header {
 		align-items : flex-start;
@@ -23,12 +24,13 @@ div.teamCard {
 	}
 
 	div.content {
-		align-items : center;
-		display     : flex;
+		align-items     : center;
+		display         : flex;
+		justify-content : space-between;
+		padding         : 1em;
 
 		img.logo {
 			height : 10em;
-			margin : auto;
 			width  : 10em;
 		}
 	}

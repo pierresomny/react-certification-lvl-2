@@ -11,11 +11,11 @@ export function App(): ReactElement {
 
 	return (
 		<div className={ classes.app }>
-			<h1>NBA Score Tracking App</h1>
 			<NbaTeamSelector/>
 			<div className={ classes.content }>
 				{ trackedTeams.map((team: Team, key: number) => <TeamCard key={ key } team={ team }/>) }
 			</div>
+
 		</div>
 	);
 }
