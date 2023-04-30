@@ -22,7 +22,9 @@ const router = createBrowserRouter(
 				return { team };
 			},
 		},
-	]);
+	], {
+		basename: '/react-certification-lvl-2',
+	});
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 	<React.StrictMode>

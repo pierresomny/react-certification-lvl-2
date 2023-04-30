@@ -30,7 +30,7 @@ export const TrackedTeamsProvider = ({ children }: TrackedTeamsProviderPropertie
 	 * @param {Team} deleted_team
 	 */
 	const removeTeam = (deleted_team: Team): void => {
-		setTrackedTeams(trackedTeams.filter((team: Team): boolean => team !== deleted_team));
+		setTrackedTeams(trackedTeams.filter((team: Team): boolean => team.id !== deleted_team.id));
 	};
 
 	return (

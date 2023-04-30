@@ -16,7 +16,7 @@ export function NbaTeamSelector(): ReactElement {
 		if (selectedTeam) {
 			addTeam(selectedTeam);
 			// Then select next non-tracked teams
-			return setSelectedTeam(teams.filter((team: Team) => !trackedTeams.includes(team) && team.id !== selectedTeam.id)
+			return setSelectedTeam(teams.filter((team: Team) => trackedTeams.filter((trackedTeam: Team): boolean => trackedTeam.id === team.id).length === 0 && team.id !== selectedTeam.id)
 			                            .pop());
 		}
 		alert('Select a team first');
@@ -25,7 +25,7 @@ export function NbaTeamSelector(): ReactElement {
 	return <div className={ classes.selector }>
 		<select id={ 'teamSelect' } onChange={ handleSelectChange } value={ selectedTeam?.id }>
 			{ teams
-				.filter((team: Team) => !trackedTeams.includes(team))
+				.filter((team: Team) => trackedTeams.filter((trackedTeam: Team): boolean => trackedTeam.id === team.id).length === 0)
 				.map((team: Team) => <option key={ team.id } label={ team.full_name }
 				                             value={ team.id }></option>) }
 		</select>
