@@ -16,13 +16,13 @@ export const ResultPage = () => {
 	};
 
 	return <div className={ classes.result }>
-		<h2>{ team?.full_name } [{ team?.abbreviation }]</h2>
+		<h2>{ team.full_name } [{ team.abbreviation }]</h2>
 		<hr/>
 		<p>Score of past 12 days :</p>
 		{
 			games.map((game: Game) => displayGameRow(game))
 		}
-		<button onClick={ () => navigate('/') }>
+		<button id={ 'backBtn' } onClick={ () => navigate('/') }>
 			{ `<<` } Back to all team stats
 		</button>
 	</div>;

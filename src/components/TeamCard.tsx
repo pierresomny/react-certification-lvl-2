@@ -41,9 +41,11 @@ export const TeamCard = ({ team }: TeamCardProperties): ReactElement => {
 		<div className={ classes.header }>
 			<div className={ classes.title }>
 				<p>{ team.full_name } [{ team.abbreviation }]</p>
-				<span>{ team.conference }</span>
+				{
+					team.conference.trim() && <span>{ team.conference }ern conference</span>
+				}
 			</div>
-			<button onClick={ () => removeTeam(team) }>x</button>
+			<button id={ `remove${ team.abbreviation }` } onClick={ () => removeTeam(team) }>x</button>
 		</div>
 		<hr/>
 		<div className={ classes.content }>
@@ -53,8 +55,8 @@ export const TeamCard = ({ team }: TeamCardProperties): ReactElement => {
 			<img className={ classes.logo } src={ `https://interstate21.com/nba-logos/${ team.abbreviation }.png` }
 			     alt={ `${ team.full_name } logo` }/>
 		</div>
-		<button onClick={ () => navigate(`results/${ team.id }`) }>
-			See game results
+		<button id={ `results${ team.abbreviation }` } onClick={ () => navigate(`results/${ team.id }`) }>
+			See game results { `>>` }
 		</button>
 	</div>;
 };

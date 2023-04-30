@@ -23,12 +23,12 @@ export function NbaTeamSelector(): ReactElement {
 	};
 
 	return <div className={ classes.selector }>
-		<select onChange={ handleSelectChange } value={ selectedTeam?.id }>
+		<select id={ 'teamSelect' } onChange={ handleSelectChange } value={ selectedTeam?.id }>
 			{ teams
 				.filter((team: Team) => !trackedTeams.includes(team))
 				.map((team: Team) => <option key={ team.id } label={ team.full_name }
 				                             value={ team.id }></option>) }
 		</select>
-		<button onClick={ handleTeamAdd }>Track team</button>
+		<button id={ 'trackBtn' } onClick={ handleTeamAdd }>Track team</button>
 	</div>;
 }
